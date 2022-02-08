@@ -20,7 +20,7 @@ export default function HomePage(props) {
     </React.Fragment >
   )
 }
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   // get home page data using category from hero images 
   // const homePage = await getPage('home-page')
   const response = await fetch(`${process.env.url}/wp-json/wp/v2/info`)
@@ -31,7 +31,7 @@ export async function getServerSideProps(context) {
     props: {
       contactData: data[0]
     },
-    //revalidate: 60
+    revalidate: 172800
   }
 
 }

@@ -30,7 +30,7 @@ export default function Gallery(props) {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
 
 
   // chef
@@ -51,7 +51,7 @@ export async function getServerSideProps(context) {
       galleryData: galleryData[0],
       seoData: seoData[0]
     },
-    //revalidate: 60
+    revalidate: 172800
   }
 
 }

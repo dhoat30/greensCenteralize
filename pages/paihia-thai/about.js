@@ -26,7 +26,7 @@ export default function About(props) {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
 
 
   // chef
@@ -47,7 +47,7 @@ export async function getServerSideProps(context) {
       seoData: seoData[0]
 
     },
-    //revalidate: 60
+    revalidate: 172800
   }
 
 }

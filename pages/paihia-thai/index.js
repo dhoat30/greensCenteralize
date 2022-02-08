@@ -39,7 +39,7 @@ export default function Home(props) {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
 
   // slider data 
   const response = await fetch(`${process.env.url}/wp-json/wp/v2/slider`)
@@ -100,7 +100,7 @@ export async function getServerSideProps(context) {
       seoData: seoData[0]
 
     },
-    //revalidate: 60
+    revalidate: 172800
   }
 
 }

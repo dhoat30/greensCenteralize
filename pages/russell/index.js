@@ -38,7 +38,7 @@ export default function Home(props) {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   // const homePage = await getPage('home-page')
   const seoResponse = await fetch(`${process.env.url}/wp-json/wp/v2/info`)
   let seoData = await seoResponse.json()
@@ -98,7 +98,7 @@ export async function getServerSideProps(context) {
       galleryData: galleryData[0],
       seoData: seoData[0]
     },
-    //revalidate: 60
+    revalidate: 172800
   }
 
 }
