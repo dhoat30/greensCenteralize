@@ -14,6 +14,7 @@ function SEO({ seo }) {
                     ? seo.description.substring(0, 160)
                     : seo.description
                 }>
+
             </meta>
 
             {/* open graph meta */}
