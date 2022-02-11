@@ -5,7 +5,7 @@ import Input from '../../../UI/Input/Input'
 import axios from 'axios'
 import Loader from '../../../UI/Loader/Loader'
 
-function Form({ emailTo }) {
+function Form({ emailTo, formName }) {
 
 
     // states
@@ -82,7 +82,8 @@ function Form({ emailTo }) {
                 email: enteredEmail,
                 phone: enteredPhone,
                 message: enteredMessage,
-                emailTo: emailTo
+                emailTo: emailTo,
+                formName: formName
             }).then(res => {
                 if (res.data.data === 200) {
                     setFormSubmitted(true)
@@ -101,7 +102,6 @@ function Form({ emailTo }) {
             }).catch(err => {
                 console.log(err)
                 setShowLoader(false)
-
             })
 
     }

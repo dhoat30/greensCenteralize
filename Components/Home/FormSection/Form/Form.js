@@ -4,7 +4,7 @@ import Button from '../../../UI/Button/Button'
 import Input from '../../../UI/Input/Input'
 import axios from 'axios'
 import Loader from '../../../UI/Loader/Loader'
-function Form({ emailTo, formNote }) {
+function Form({ emailTo, formNote, formName }) {
 
     // states
     const [enteredName, setEnteredName] = useState('')
@@ -114,7 +114,8 @@ function Form({ emailTo, formNote }) {
             guests: enteredGuests,
             date: enteredDate,
             time: enteredTime,
-            emailTo: emailTo
+            emailTo: emailTo,
+            formName: formName
         }
         axios.post('/api/book-table', formData
         ).then(res => {
@@ -228,7 +229,7 @@ function Form({ emailTo, formNote }) {
                 {showLoader ? <Loader aligncenter="true" /> : <ButtonStyle color="white">Book Now</ButtonStyle>}
 
             </FormStyle>
-            <p className="success center-align">*{formNote} </p>
+            <p className="success center-align">{formNote} </p>
             <p className="success center-align">{formSubmitted} </p>
 
             {/* invalid input text */}

@@ -3,14 +3,16 @@ import styled from 'styled-components'
 import SectionTitle from '../../UI/Titles/SectionTitle'
 import Form from './Form/Form'
 
-function FormSection({ emailTo }) {
+function FormSection({ emailTo, formName }) {
 
 
     return (
         <Container>
 
             <SectionTitle color="var(--green) ">Contact Us</SectionTitle>
-            <Form emailTo={emailTo}></Form>
+            <Form
+                formName={formName}
+                emailTo={emailTo}></Form>
         </Container>
 
     )

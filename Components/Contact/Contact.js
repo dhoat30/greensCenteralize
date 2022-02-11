@@ -8,11 +8,14 @@ function Contact() {
     if (!contactInfoCtx.contactData) {
         return null
     }
+    console.log(contactInfoCtx.contactData.acf.contact_form_name)
     return (
         <Container>
             <Flex className="row-container">
                 <IFrameStyle src={contactInfoCtx.contactData.acf.google_map_url} style={{ border: '0' }} allowfullscreen="" loading="lazy"></IFrameStyle>
-                <FormSection emailTo={contactInfoCtx.contactData.acf.booking_form_email} />
+                <FormSection
+                    formName={contactInfoCtx.contactData.acf.contact_form_name}
+                    emailTo={contactInfoCtx.contactData.acf.booking_form_email} />
             </Flex>
 
         </Container>
