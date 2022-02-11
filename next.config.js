@@ -4,21 +4,21 @@ module.exports = (phase) => {
   if (phase === PHASE_DEVELOPMENT_SERVER) {
     return {
       env: {
-        url: "https://data.greensnz.com"
+        url: "http://data.greensrobotics.co.nz"
       },
       reactStrictMode: true,
       images: {
-        domains: ['data.greensnz.com']
+        domains: ['data.greensrobotics.co.nz']
       }
     }
   }
   return {
     env: {
-      url: "https://data.greensnz.com"
+      url: "http://data.greensrobotics.co.nz"
     },
     reactStrictMode: true,
     images: {
-      domains: ['data.greensnz.com']
+      domains: ['data.greensrobotics.co.nz']
     }
   }
 }

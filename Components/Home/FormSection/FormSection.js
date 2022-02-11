@@ -5,11 +5,13 @@ import Form from './Form/Form'
 import ContactInfoContext from '../../../store/contact-info-context'
 function FormSection() {
     const contactInfoCtx = useContext(ContactInfoContext)
+    console.log(contactInfoCtx.contactData)
     return (
         <Container id="book-table">
             <Content>
                 <SectionTitle color="var(--green) ">Book a Table</SectionTitle>
                 <Form
+
                     formNote={contactInfoCtx.contactData && contactInfoCtx.contactData.acf.booking_form_note}
                     emailTo={contactInfoCtx.contactData && contactInfoCtx.contactData.acf.booking_form_email}></Form>
             </Content>
