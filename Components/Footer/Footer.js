@@ -7,6 +7,7 @@ import AnchorLinkIcon from '../UI/AnchorLinkIcon/AnchorLinkIcon'
 import Copyright from '../UI/Copyright/Copyright'
 import MobileFixedButtons from '../UI/MobileFixedButtons/MobileFixedButtons'
 import ContactInfoContext from '../../store/contact-info-context'
+import Image from 'next/image'
 const Footer = (props) => {
     const contactInfoCtx = useContext(ContactInfoContext)
     let contactData = contactInfoCtx.contactData
@@ -26,10 +27,11 @@ const Footer = (props) => {
         openingHours: contactData.acf.opening_hours,
         closed: contactData.acf.closed_,
         copyright: contactData.acf.copyright,
-        orderOnlineLink: contactData.acf.order_online_link
+        orderOnlineLink: contactData.acf.order_online_link,
+        popUpImage: contactData.acf.pop_up_image
 
     }
-
+    console.log(contactData)
     return (
         <React.Fragment>
 
@@ -82,11 +84,18 @@ const Footer = (props) => {
                         </ColumnTitle >
                         <Items>
                             <AnchorLinkIcon icon="faClock" >
-                                Tuesday–Sunday
-                                <SecondText >{infoArray.openingHours}</SecondText>
-                                {infoArray.closed ?
+                                {infoArray.closed} Closed
+                                {infoArray.openingHours.map((item, index) => {
+                                    return <OpeningHoursItem key={index}>
+                                        <SecondText >{item.opening_days} </SecondText>
+                                        <SecondText >{item.opening_hours} </SecondText>
+                                    </OpeningHoursItem>
+
+                                })}
+
+                                {/* {infoArray.closed ?
                                     <SecondText >{infoArray.closed} Closed</SecondText> : null
-                                }
+                                } */}
 
                             </AnchorLinkIcon>
                         </Items>
@@ -95,6 +104,10 @@ const Footer = (props) => {
                 <Copyright copyright={infoArray.copyright} />
                 <MobileFixedButtons orderOnlineLink={infoArray.orderOnlineLink} phoneNumber={infoArray.phone} />
             </Container >
+            {/* 
+            <PopupContainer>
+                <Image src={infoArray.popUpImage} layout="responsive" width={100} height={100} />
+            </PopupContainer> */}
 
         </React.Fragment>
 
@@ -147,5 +160,17 @@ justify-content: space-between;
 width: 110px;
 margin: 10px auto;
 `
+const OpeningHoursItem = styled.div`
+margin-top: 5px;
+`
+const PopupContainer = styled.div`
+    width: 70%;
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    overflow: scroll;
 
+`
 export default Footer
