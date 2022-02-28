@@ -35,6 +35,7 @@ export default function Home(props) {
         chefData={props.chefData}
         galleryData={props.galleryData}
       />
+
     </React.Fragment >
   )
 }
