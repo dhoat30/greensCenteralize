@@ -31,7 +31,7 @@ const Footer = (props) => {
         popUpImage: contactData.acf.pop_up_image
 
     }
-    console.log(contactData)
+    console.log(infoArray.openingHours)
     return (
         <React.Fragment>
 
@@ -84,14 +84,14 @@ const Footer = (props) => {
                         </ColumnTitle >
                         <Items>
                             <AnchorLinkIcon icon="faClock" >
-                                {infoArray.closed} Closed
-                                {infoArray.openingHours.map((item, index) => {
+                                {/* {infoArray.closed} Closed */}
+                                {/* {infoArray.openingHours.map((item, index) => {
                                     return <OpeningHoursItem key={index}>
                                         <SecondText >{item.opening_days} </SecondText>
                                         <SecondText >{item.opening_hours} </SecondText>
                                     </OpeningHoursItem>
 
-                                })}
+                                })} */}
 
                                 {/* {infoArray.closed ?
                                     <SecondText >{infoArray.closed} Closed</SecondText> : null
