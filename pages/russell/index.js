@@ -1,5 +1,4 @@
-import cookie from 'cookie'
-import Head from 'next/head'
+
 import React, { useContext, useEffect } from 'react'
 import HomePage from '../../Components/Home/Home'
 import SEO from '../../Components/SEO'
@@ -98,7 +97,7 @@ export async function getStaticProps(context) {
       galleryData: galleryData[0],
       seoData: seoData[0]
     },
-    revalidate: 172800
+    revalidate: 86400
   }
 
 }

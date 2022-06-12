@@ -31,7 +31,7 @@ const Footer = (props) => {
         popUpImage: contactData.acf.pop_up_image
 
     }
-    console.log(infoArray.openingHours)
+    console.log(contactData)
     return (
         <React.Fragment>
 
@@ -83,21 +83,17 @@ const Footer = (props) => {
                             Opening Hours
                         </ColumnTitle >
                         <Items>
-                            <AnchorLinkIcon icon="faClock" >
-                                {/* {infoArray.closed} Closed */}
-                                {/* {infoArray.openingHours.map((item, index) => {
-                                    return <OpeningHoursItem key={index}>
-                                        <SecondText >{item.opening_days} </SecondText>
-                                        <SecondText >{item.opening_hours} </SecondText>
-                                    </OpeningHoursItem>
 
-                                })} */}
 
-                                {/* {infoArray.closed ?
-                                    <SecondText >{infoArray.closed} Closed</SecondText> : null
-                                } */}
+                            {infoArray.openingHours.map((item, index) => {
+                                return <OpeningHoursItem key={index}>
+                                    <SecondText >{item.opening_days} </SecondText>
+                                    <SecondText >{item.opening_hours} </SecondText>
+                                </OpeningHoursItem>
 
-                            </AnchorLinkIcon>
+                            })}
+
+
                         </Items>
                     </OpeningHoursContainer>
                 </Content>
@@ -120,7 +116,7 @@ padding: 50px 0 0 0;
 `
 
 const SecondText = styled.span`
-margin-left: 23px;
+margin-left: 2px;
 display: block;
 `
 const Content = styled.div`
@@ -162,6 +158,7 @@ margin: 10px auto;
 `
 const OpeningHoursItem = styled.div`
 margin-top: 5px;
+color: var(--green);
 `
 const PopupContainer = styled.div`
     width: 70%;

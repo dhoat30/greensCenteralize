@@ -52,7 +52,7 @@ export async function getStaticProps(context) {
       seoData: seoData[0]
 
     },
-    revalidate: 172800
+    revalidate: 86400
   }
 
 }

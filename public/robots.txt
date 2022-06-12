@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://greensnz.com
+
+# Sitemaps
+Sitemap: https://greensnz.com/sitemap.xml

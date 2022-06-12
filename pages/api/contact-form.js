@@ -1,5 +1,4 @@
-import cookie from 'cookie'
-import axios from 'axios'
+
 async function handler(req, res) {
     if (req.method === 'POST') {
         const response = await fetch(`${process.env.url}/wp-json/webduel/v1/contact-form`, {
