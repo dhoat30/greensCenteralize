@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 function MenuSection({ favouriteMenuData, menuImagesData }) {
 
   const router = useRouter()
-
+  console.log(router.asPath)
   // // rendered items array 
   const menuItems = favouriteMenuData.map(data => {
     return (<React.Fragment key={data.id}>
@@ -37,13 +37,12 @@ function MenuSection({ favouriteMenuData, menuImagesData }) {
   return (
     <Container>
       <SpecialContent
-
         title="Our Specials"
         subTitle="Menu"
         content={menuItems}
         firstImage={firstImage}
         secondImage={secondImage}
-        link="/menu"
+        link={`https://greensnz.com/${router.asPath}/menu`}
       />
 
     </Container>
