@@ -5,8 +5,10 @@ import SectionTitle from '../../UI/Titles/SectionTitle'
 import Button from '../../UI/Button/Button'
 import Link from 'next/link'
 import AnchorLink from '../../UI/AnchorLink/AnchorLink'
+import { useRouter } from 'next/router'
 
 function HomeGallery({ galleryData }) {
+  const router = useRouter()
 
 
   return (
@@ -15,7 +17,7 @@ function HomeGallery({ galleryData }) {
       <GalleryContainer className="row-container">
         <SectionTitle>Gallery</SectionTitle>
         <Gallery galleryData={galleryData} />
-        <ButtonStyle link="/gallery">View More</ButtonStyle>
+        <ButtonStyle link={`https://greensnz.com/${router.asPath}/gallery`}>View More</ButtonStyle>
       </GalleryContainer>
     </Container>
   )
