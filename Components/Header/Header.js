@@ -35,11 +35,11 @@ function Header() {
       url: `${url}`,
       title: "Home"
     },
-    {
-      id: 121546,
-      url: `${url}/menu`,
-      title: "Menu"
-    },
+    // {
+    //   id: 121546,
+    //   url: `${url}/menu`,
+    //   title: "Menu"
+    // },
     {
       id: 121547,
       url: `${url}/gallery`,
