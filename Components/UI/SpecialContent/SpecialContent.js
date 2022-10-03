@@ -4,7 +4,7 @@ import OverlayTitle from '../Titles/OverlayTitle'
 import ImageCard from '../../UI/ImageCard/ImageCard'
 import Link from 'next/link'
 function SpecialContent(props) {
-
+    console.log(props.link)
     return (
         <Container className={props.className}>
             <OverlayTitle subTitle={props.subTitle}> {props.title} </OverlayTitle>

@@ -1,41 +1,35 @@
 import React, { useState, useEffect, useContext } from 'react'
 import Image from 'next/image'
 import styled from 'styled-components'
-import ContactInfoContext from '../../../store/contact-info-context'
-import { useRouter } from 'next/router'
 
-function Logo({ className, logo }) {
-    const contactInfoCtx = useContext(ContactInfoContext)
-    let contactData = contactInfoCtx.contactData
-    const router = useRouter()
 
-    const logoImg = contactData ? <ImageStyle
-        src={contactData.acf.logo.url}
-        layout="fixed"
-        width={router.pathname.includes('/russell') ? 180 : 150}
-        height={53}
-        alt="Greens Logo"
-    /> : "Loading"
+function Logo({ className, logoData, contWidth }) {
 
+    console.log(contWidth)
 
     return (
-        <Container className={className}>
-            {logoImg}
+        <Container className={className} contWidth={contWidth}>
+        <ImageStyle
+                src={logoData.url}
+                layout="responsive"
+                width="100%"
+                height={(logoData.height / logoData.width) * 100}
+                alt="Greens Logo"
+            />
 
-        </Container>
-    )
+                </Container>
+            )
 }
 
 export default Logo
 
 const Container = styled.div`
-/* width: 150px;
-height:53px;
-position: relative; */
-
+width: ${props=> props.contWidth}; 
+    display:block;
 `
 const ImageStyle = styled(Image)`
 object-fit: cover;
 margin: 0 auto 0 0;
 border: solid red;
+display: block ;
 `

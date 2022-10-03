@@ -17,7 +17,7 @@ function HomeGallery({ galleryData }) {
       <GalleryContainer className="row-container">
         <SectionTitle>Gallery</SectionTitle>
         <Gallery galleryData={galleryData} />
-        <ButtonStyle link={`https://greensnz.com/${router.asPath}/gallery`}>View More</ButtonStyle>
+        <ButtonStyle link={`https://greensnz.com${router.asPath}/gallery`}>View More</ButtonStyle>
       </GalleryContainer>
     </Container>
   )

@@ -9,33 +9,18 @@ import getContactInfo from '../util/get-contact-info'
 import Footer from './Footer/Footer'
 
 function Layout(props) {
-    const contactInfoCtx = useContext(ContactInfoContext)
+
     const loadingCtx = useContext(LoadingContext)
-    useEffect(() => {
-        axios("/api/contact-info")
-            .then(res => {
-                if (res) {
-                    const contactData = res.data.data.filter((item) => contactInfoCtx.contactDataUrl === item.slug)
-                    contactInfoCtx.getContactData(contactData[0])
-                }
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }, [contactInfoCtx.contactDataUrl])
-    console.log()
     return (
         <div>
-            {contactInfoCtx.showHeaderFooter &&
-                <Header />
-            }
+                <Header contactData = {props.children[1].props.contactInfoData} />
+            
 
             <Main>{props.children}
                 <LoadingOverlay show={loadingCtx.loadingOverlay} />
             </Main>
-            {contactInfoCtx.showHeaderFooter &&
-                <Footer />
-            }
+            <Footer contactData = {props.children[1].props.contactInfoData}/>
+       
 
         </div>
     )

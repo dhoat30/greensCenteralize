@@ -5,27 +5,22 @@ import styled from 'styled-components'
 import Link from 'next/link'
 import ContactInfoContext from '../../store/contact-info-context'
 import AnchorLink from '../UI/AnchorLink/AnchorLink'
-import axios from 'axios'
 import { useRouter } from 'next/router'
 
 // menu array
 
 
-function Header() {
+function Header({contactData}) {
   const router = useRouter()
-  console.log(router)
-  const contactInfoCtx = useContext(ContactInfoContext)
-  if (!contactInfoCtx.contactDataUrl || !contactInfoCtx.contactData) {
-    return null
-  }
+  console.log(contactData)
   let url
-  if (contactInfoCtx.contactDataUrl === 'greens-thai-paihia') {
+  if (contactData.slug === 'greens-thai-paihia') {
     url = '/paihia-thai'
   }
-  else if (contactInfoCtx.contactDataUrl === 'greens-indian-pahia') {
+  else if (contactData.slug === 'greens-indian-pahia') {
     url = '/paihia-indian'
   }
-  else if (contactInfoCtx.contactDataUrl === 'greens-russell') {
+  else if (contactData.slug === 'greens-russell') {
     url = '/russell'
   }
 
@@ -35,11 +30,11 @@ function Header() {
       url: `${url}`,
       title: "Home"
     },
-    // {
-    //   id: 121546,
-    //   url: `${url}/menu`,
-    //   title: "Menu"
-    // },
+    {
+      id: 121546,
+      url: `${url}/menu`,
+      title: "Menu"
+    },
     {
       id: 121547,
       url: `${url}/gallery`,
@@ -57,7 +52,7 @@ function Header() {
     },
     {
       id: 1215410,
-      url: contactInfoCtx.contactData.acf.order_online_link,
+      url: contactData.acf.order_online_link,
       title: "Order Online"
     },
   ]
@@ -88,14 +83,14 @@ function Header() {
       <DesktopNavbar className="row-container">
         <Navbar firstMenuArray={firstPartMenu} />
         <Link href={menuArray[0].url} passHref>
-          <LinkStyle><Logo header={true} width="200px" /></LinkStyle>
+          <LinkStyle><Logo logoData={contactData.acf.logo} header={true} contWidth="150px" /></LinkStyle>
         </Link>
         <Navbar firstMenuArray={secondPartMenu} />
       </DesktopNavbar>
 
       <MobileNavbar className="row-container">
         <Link href={menuArray[0].url} passHref>
-          <LinkStyle><Logo header={true} width="200px" /></LinkStyle>
+          <LinkStyle><Logo logoData={contactData.acf.logo} header={true} contWidth="150px" /></LinkStyle>
         </Link>
         <Navbar firstMenuArray={mobileMenuArrayData} />
       </MobileNavbar>

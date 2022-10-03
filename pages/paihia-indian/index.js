@@ -2,13 +2,10 @@ import React, { useContext, useEffect } from 'react'
 import HomePage from '../../Components/Home/Home'
 import SEO from '../../Components/SEO'
 import ContactInfoContext from '../../store/contact-info-context'
+import getContactInfo from '../../util/get-contact-info'
 
 export default function Home(props) {
-  const contactInfoCtx = useContext(ContactInfoContext)
-  useEffect(() => {
 
-    contactInfoCtx.getContactDataUrl('greens-indian-pahia')
-  }, [])
 
   const seo = {
     title: "Greens Indian Restaurant – Paihia | Delivery | Byo | Gluten Free Options",
@@ -86,6 +83,7 @@ export async function getStaticProps(context) {
   let seoData = await seoResponse.json()
   seoData = await seoData.filter(item => item.title.rendered.includes('Russell'))
 
+  const contactInfoData = await getContactInfo("greens-indian-pahia") 
 
   return {
     props: {
@@ -98,7 +96,9 @@ export async function getStaticProps(context) {
       testimonialData: testimonialData,
       chefData: chefData[0],
       galleryData: galleryData[0],
-      seoData: seoData[0]
+      seoData: seoData[0],
+      contactInfoData: contactInfoData[0]
+
 
     },
     revalidate: 86400

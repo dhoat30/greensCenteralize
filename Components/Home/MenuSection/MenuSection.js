@@ -41,7 +41,7 @@ function MenuSection({ favouriteMenuData, menuImagesData }) {
         content={menuItems}
         firstImage={firstImage}
         secondImage={secondImage}
-        link={`https://greensnz.com/${router.asPath}/menu`}
+        link={`https://greensnz.com${router.asPath}/menu`}
       />
 
     </Container>

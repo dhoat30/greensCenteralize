@@ -2,20 +2,16 @@ import React, { useContext } from 'react'
 import FormSection from './FormSection/FormSection'
 import styled from 'styled-components'
 import ContactInfoContext from '../../store/contact-info-context'
-function Contact() {
-    const contactInfoCtx = useContext(ContactInfoContext)
-    console.log(contactInfoCtx.contactData)
-    if (!contactInfoCtx.contactData) {
-        return null
-    }
-    console.log(contactInfoCtx.contactData.acf.contact_form_name)
+function Contact({contactInfoData}) {
+    console.log(contactInfoData)
+
     return (
         <Container>
             <Flex className="row-container">
-                <IFrameStyle src={contactInfoCtx.contactData.acf.google_map_url} style={{ border: '0' }} allowfullscreen="" loading="lazy"></IFrameStyle>
+                <IFrameStyle src={contactInfoData.acf.google_map_url} style={{ border: '0' }} allowfullscreen="" loading="lazy"></IFrameStyle>
                 <FormSection
-                    formName={contactInfoCtx.contactData.acf.contact_form_name}
-                    emailTo={contactInfoCtx.contactData.acf.booking_form_email} />
+                    formName={contactInfoData.acf.contact_form_name}
+                    emailTo={contactInfoData.acf.booking_form_email} />
             </Flex>
 
         </Container>

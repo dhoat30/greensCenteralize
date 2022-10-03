@@ -2,14 +2,9 @@
 import React, { useContext, useEffect } from 'react'
 import HomePage from '../../Components/Home/Home'
 import SEO from '../../Components/SEO'
-import ContactInfoContext from '../../store/contact-info-context'
+import getContactInfo from '../../util/get-contact-info'
 
 export default function Home(props) {
-  const contactInfoCtx = useContext(ContactInfoContext)
-  useEffect(() => {
-    console.log(props)
-    contactInfoCtx.getContactDataUrl('greens-russell')
-  }, [])
 
   const seo = {
     title: "Greens Thai and Indian Restaurant – Russell",
@@ -83,6 +78,7 @@ export async function getStaticProps(context) {
   if (indianGallery.length > 0) {
     galleryData = indianGallery.filter(item => item.title.rendered.includes('Russell'))
   }
+  const contactInfoData = await getContactInfo("greens-russell") 
 
   return {
     props: {
@@ -95,7 +91,9 @@ export async function getStaticProps(context) {
       testimonialData: testimonialData,
       chefData: chefData[0],
       galleryData: galleryData[0],
-      seoData: seoData[0]
+      seoData: seoData[0],
+      contactInfoData: contactInfoData[0]
+
     },
     revalidate: 86400
   }

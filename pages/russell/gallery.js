@@ -1,14 +1,9 @@
 import React, { useContext, useEffect } from 'react'
 import GalleryPage from '../../Components/GalleryPage/GalleryPage'
 import SEO from '../../Components/SEO'
-import ContactInfoContext from '../../store/contact-info-context'
+import getContactInfo from '../../util/get-contact-info'
 
 export default function Gallery(props) {
-  const contactInfoCtx = useContext(ContactInfoContext)
-  useEffect(() => {
-
-    contactInfoCtx.getContactDataUrl('greens-russell')
-  }, [])
 
   const seo = {
     title: "Gallery – Greens Thai and Indian Restaurant – Russell",
@@ -46,11 +41,14 @@ export async function getStaticProps(context) {
   const seoResponse = await fetch(`${process.env.url}/wp-json/wp/v2/info`)
   let seoData = await seoResponse.json()
   seoData = await seoData.filter(item => item.title.rendered.includes('Russell'))
+  const contactInfoData = await getContactInfo("greens-russell") 
 
   return {
     props: {
       galleryData: galleryData[0],
-      seoData: seoData[0]
+      seoData: seoData[0],
+      contactInfoData: contactInfoData[0]
+
 
     },
     revalidate: 86400

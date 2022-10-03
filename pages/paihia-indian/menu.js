@@ -3,6 +3,7 @@ import React, { useContext, useEffect } from 'react'
 import MenuPage from '../../Components/MenuPage/MenuPage'
 import SEO from '../../Components/SEO'
 import ContactInfoContext from '../../store/contact-info-context'
+import getContactInfo from '../../util/get-contact-info'
 
 export default function Menu(props) {
     const contactInfoCtx = useContext(ContactInfoContext)
@@ -37,12 +38,15 @@ export async function getStaticProps(context) {
     let seoData = await seoResponse.json()
     seoData = await seoData.filter(item => item.title.rendered.includes('Russell'))
 
+    const contactInfoData = await getContactInfo("greens-indian-pahia") 
 
 
     return {
         props: {
             menuData: menuData,
-            seoData: seoData[0]
+            seoData: seoData[0],
+            contactInfoData: contactInfoData[0]
+
 
         },
         revalidate: 86400

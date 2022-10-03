@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleRight } from '@fortawesome/pro-light-svg-icons'
+import ArrowIcon from '../Icons/ArrowIcon'
 
 const Container = styled.button`    
     margin: ${props => props.margin ? '10px' : null};
@@ -22,6 +23,23 @@ const Container = styled.button`
         color: ${props => !props.background ? "white" : "var(--green)"};
         border: 2px solid var(--green);
 
+        svg{ 
+            path{ 
+                fill:white; 
+            }
+        }
+}
+
+svg{ 
+    transform: rotate(180deg);
+    width: 8px;
+    margin-left: 5px;  
+    position: relative; 
+    top: -1px; 
+    path{ 
+        fill: var(--green);
+      
+    }
 }
 `
 function Button(props) {
@@ -30,7 +48,7 @@ function Button(props) {
     return (
         <Container onClick={props.buttonClick} background={props.background} className={buttonClasses} margin={props.margin}>
             {props.children}
-            <FontAwesomeIcon icon={faAngleRight} style={{ fontSize: '20' }} className="button-arrow" />
+          <ArrowIcon/> 
         </Container>
     )
 }

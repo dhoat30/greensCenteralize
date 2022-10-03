@@ -2,14 +2,10 @@
 import React, { useContext, useEffect } from 'react'
 import MenuPage from '../../Components/MenuPage/MenuPage'
 import SEO from '../../Components/SEO'
-import ContactInfoContext from '../../store/contact-info-context'
+import getContactInfo from '../../util/get-contact-info'
 
 export default function Menu(props) {
-    const contactInfoCtx = useContext(ContactInfoContext)
-    useEffect(() => {
-        contactInfoCtx.getContactDataUrl('greens-russell')
-    }, [])
-
+   
     const seo = {
         title: "Menu – Greens Thai and Indian Restaurant – Russell",
         description: "Whether here for lunch, dinner or a private function, enjoy an atmosphere that combines the Indo-Thai warmth with the friendliness Russell is famed for.",
@@ -38,11 +34,14 @@ export async function getStaticProps(context) {
     let seoData = await seoResponse.json()
     seoData = await seoData.filter(item => item.title.rendered.includes('Russell'))
 
+    const contactInfoData = await getContactInfo("greens-russell") 
 
     return {
         props: {
             menuData: menuData,
-            seoData: seoData[0]
+            seoData: seoData[0],
+            contactInfoData: contactInfoData[0]
+
         },
         revalidate: 86400
     }

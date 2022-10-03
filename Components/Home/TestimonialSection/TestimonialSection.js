@@ -5,6 +5,7 @@ import SectionTitle from '../../UI/Titles/SectionTitle'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faQuoteLeft } from '@fortawesome/pro-duotone-svg-icons'
 import axios from 'axios'
+import QuoteIcon from '../../UI/Icons/QuoteIcon'
 
 function TestimonialSection({ testimonialData }) {
 
@@ -21,7 +22,9 @@ function TestimonialSection({ testimonialData }) {
   return (
     <Container>
       <TestimonialBox className="row-container">
-        <SectionTitle fontFamily="var(--playfairDisplay)"><FontAwesomeIcon color="var(--green) " icon={faQuoteLeft} size="2x" /></SectionTitle>
+        <SectionTitle fontFamily="var(--playfairDisplay)">
+          <QuoteIconStyle/> 
+        </SectionTitle>
         <CarouselsStyle data={testimonialArray} />
       </TestimonialBox>
 
@@ -44,6 +47,13 @@ margin: 0 auto;
 `
 const CarouselsStyle = styled(Carousels)`
 margin-top:50px;
+`
+const QuoteIconStyle = styled(QuoteIcon)`
+width: 120px; 
+path{ 
+  fill: var(--darkGreen);
+
+}
 `
 
 export default TestimonialSection
