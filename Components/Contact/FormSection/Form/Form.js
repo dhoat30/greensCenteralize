@@ -7,7 +7,6 @@ import Loader from '../../../UI/Loader/Loader'
 
 function Form({ emailTo, formName }) {
 
-
     // states
     const [enteredName, setEnteredName] = useState('')
     const [enteredNameTouched, setEnteredNameTouched] = useState(false)
@@ -161,7 +160,7 @@ function Form({ emailTo, formName }) {
 
                 </InputContainer>
                 {showLoader ? <Loader alignCenter={true} /> : <ButtonStyle>Send</ButtonStyle>}
-
+              
 
             </FormStyle>
             {formSubmitted ? <p className="success center-align">Message Sent. We will get back to you soon.</p> : null}

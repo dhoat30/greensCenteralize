@@ -2,11 +2,15 @@ import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 function MenuItem(props) {
+    const clickHandler = (e)=> { 
+        props.closeClick() 
+        console.log('hello ')
+    }
     return (
         <li>
             {props.anchorTag ?
-                <AnchorStyle href={props.menuSlug}>{props.label}</AnchorStyle> :
-                <Link href={props.menuSlug} passHref><LinkStyle activeStyle={activeStyle}>{props.children}</LinkStyle></Link>
+                <AnchorStyle onClick={clickHandler} href={props.menuSlug}>{props.label}</AnchorStyle> :
+                <Link href={props.menuSlug} passHref><LinkStyle onClick={clickHandler}  activeStyle={activeStyle}>{props.children}</LinkStyle></Link>
             }
         </li>
     )

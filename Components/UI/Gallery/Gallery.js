@@ -30,24 +30,31 @@ function Gallery(props) {
 
 const Container = styled.div``
 const GalleryWrapper = styled.div`
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: flex-start;
-flex-wrap: wrap;
+display: grid;
+
 margin-top: 30px;
+grid-template-columns:  1fr 1fr 1fr ;
+@media(max-width: 1100px){ 
+    grid-template-columns:   1fr 1fr ;
+
+}
+@media(max-width: 500px){ 
+    grid-template-columns:   1fr  ;
+
+}
 `
 const ImgWrapper = styled.div`
-    width: 20%;
-    min-width: 280px;
-    height: 300px;
-    margin: 10px; 
+    width: 100%;
+    min-width: 100px;
+    height: 400px;
+   
     overflow: hidden;
     cursor: pointer; 
     position: relative;
-    @media( max-width: 815px){
-        width: 100%;
+    @media(max-width: 700px){ 
+        height: 200px;    
     }
+  
 `
 const ImageStyle = styled(Image)`
 object-fit: cover; 

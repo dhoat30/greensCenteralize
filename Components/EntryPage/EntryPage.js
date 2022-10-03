@@ -1,10 +1,10 @@
 import React, { useState, useContext, useEffect } from 'react'
 import styled from 'styled-components'
-import axios from 'axios'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMapMarkerAlt, faAngleLeft } from '@fortawesome/pro-light-svg-icons'
+
 import ContactInfoContext from '../../store/contact-info-context'
 import { useRouter } from 'next/router'
+import Map from '../UI/Icons/Map'
+import ArrowIcon from '../UI/Icons/ArrowIcon'
 
 function EntryPage() {
     const [showBranches, setShowBranches] = useState(false)
@@ -34,27 +34,25 @@ function EntryPage() {
                 {showBranches ?
                     <ButtonContainer>
                         <AnchorStyle href="https://greensnz.com/paihia-indian">
-                            <FontAwesomeIconStyle icon={faMapMarkerAlt} style={{ fontSize: '25' }} />
+                          <MapStyle/> 
                             Green&apos;s Indian
                         </AnchorStyle>
                         <AnchorStyle href="https://greensnz.com/paihia-thai">
-                            <FontAwesomeIconStyle icon={faMapMarkerAlt} style={{ fontSize: '25' }} />
+                        <MapStyle/> 
                             Green&apos;s Thai
                         </AnchorStyle>
                         <GoBack onClick={backClickHandler}>
-                            <FontLeftIcon icon={faAngleLeft} style={{ fontSize: '35' }} />
+                            <ArrowIcon/> 
                             Go Back
                         </GoBack>
                     </ButtonContainer>
                     :
                     <ButtonContainer>
                         <ButtonStyle onClick={clickHandler}>
-                            <FontAwesomeIconStyle icon={faMapMarkerAlt} style={{ fontSize: '25' }} />
-                            Green&apos;s Paihia
+                        <MapStyle/>                             Green&apos;s Paihia
                         </ButtonStyle>
                         <AnchorStyle href="https://greensnz.com/russell">
-                            <FontAwesomeIconStyle icon={faMapMarkerAlt} style={{ fontSize: '25' }} />
-                            Green&apos;s Russell
+                        <MapStyle/>                             Green&apos;s Russell
                         </AnchorStyle>
                     </ButtonContainer>
                 }
@@ -138,17 +136,12 @@ cursor: pointer;
     background: none; 
     color: var(--green);
 }
+
 `
-const FontAwesomeIconStyle = styled(FontAwesomeIcon)`
-padding-right: 5px;
-position: relative;
-top: 3px;
+const MapStyle =styled(Map)`
+width: 30px; 
 `
-const FontLeftIcon = styled(FontAwesomeIcon)`
-padding-right: 5px;
-position: relative;
-top: 7px;
-`
+
 const GoBack = styled.div`
 text-align: center; 
 margin: 5px auto 0 auto;
@@ -157,6 +150,14 @@ cursor: pointer;
 &:hover{ 
     text-decoration: underline; 
     color: var(--green);
+}
+color: var(--green);
+svg {
+    width: 10px;
+    margin-right: 5px; 
+    path{ 
+        fill: var(--green);
+    } 
 }
 `
 export default EntryPage

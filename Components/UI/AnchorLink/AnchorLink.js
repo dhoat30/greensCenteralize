@@ -1,13 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPhoneAlt } from '@fortawesome/free-solid-svg-icons'
-import { faMobile } from '@fortawesome/pro-regular-svg-icons'
+
 import Link from 'next/link'
 function AnchorLink(props) {
     const targetBlank = props.targetBlank ? "_blank" : null
-    const mobile = props.mobileIcon ? faMobile : faPhoneAlt;
-    const icon = props.showIcon ? <FontStyle icon={mobile} style={{ fontSize: '15' }} /> : null
 
     return (
         <React.Fragment>
@@ -51,8 +47,6 @@ const Container = styled.a`
 }
 `
 
-const FontStyle = styled(FontAwesomeIcon)`
-margin-right: 5px;
-`
+
 
 export default AnchorLink

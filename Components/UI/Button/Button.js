@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleRight } from '@fortawesome/pro-light-svg-icons'
+
 import ArrowIcon from '../Icons/ArrowIcon'
 
 const Container = styled.button`    

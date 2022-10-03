@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import SectionTitle from '../Titles/SectionTitle'
 import Image from 'next/image'
 import ElephantPattern from '../../UI/Pattern/ElephantPattern'
-import { text } from '@fortawesome/fontawesome-svg-core'
 
 function Hero({ title, subtitle, orderOnlineLink, bookTable, desktopImage, mobileImage, containerHeight, buttons }) {
 

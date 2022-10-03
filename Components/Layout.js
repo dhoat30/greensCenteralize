@@ -7,7 +7,7 @@ import LoadingContext from '../store/loading-context'
 import Header from './Header/Header'
 import getContactInfo from '../util/get-contact-info'
 import Footer from './Footer/Footer'
-
+import Overlay from './UI/Overlay/Overlay'
 function Layout(props) {
 
     const loadingCtx = useContext(LoadingContext)
@@ -18,6 +18,7 @@ function Layout(props) {
 
             <Main>{props.children}
                 <LoadingOverlay show={loadingCtx.loadingOverlay} />
+                <Overlay show={loadingCtx.overlay} /> 
             </Main>
             <Footer contactData = {props.children[1].props.contactInfoData}/>
        

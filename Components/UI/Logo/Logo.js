@@ -5,7 +5,6 @@ import styled from 'styled-components'
 
 function Logo({ className, logoData, contWidth }) {
 
-    console.log(contWidth)
 
     return (
         <Container className={className} contWidth={contWidth}>

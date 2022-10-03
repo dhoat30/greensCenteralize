@@ -30,7 +30,6 @@ const Footer = ({ contactData }) => {
     orderOnlineLink: contactData.acf.order_online_link,
     popUpImage: contactData.acf.pop_up_image,
   };
-  console.log(contactData);
   return (
     <React.Fragment>
       <Container>

@@ -2,16 +2,10 @@ import React, { useState, useEffect } from 'react'
 import Carousels from '../../UI/Carousels/Carousels'
 import styled from 'styled-components'
 import SectionTitle from '../../UI/Titles/SectionTitle'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faQuoteLeft } from '@fortawesome/pro-duotone-svg-icons'
-import axios from 'axios'
+
 import QuoteIcon from '../../UI/Icons/QuoteIcon'
 
 function TestimonialSection({ testimonialData }) {
-
-
-
-
   const testimonialArray = testimonialData.map(data => {
     return {
       title: data.title.rendered,

@@ -20,7 +20,7 @@ function GalleryPage({ galleryData }) {
 
 const Container = styled.section`
 position: relative;
-padding: 100px;
+padding: 100px 20px;
 `
 const GalleryContainer = styled.div`
 position: relative;
