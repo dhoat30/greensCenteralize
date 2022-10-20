@@ -18,7 +18,7 @@ function Hero({ title, subtitle, orderOnlineLink, bookTable, desktopImage, mobil
                         null :
                         <ButtonsContainer>
                             <AnchorLink link={orderOnlineLink} background={true} targetBlank={true}> Order Online </AnchorLink>
-                            <AnchorLink link={bookTable} showIcon={false}>Book a table</AnchorLink>
+                            <AnchorLink link={bookTable}  showIcon={false}>Book a table</AnchorLink>
                         </ButtonsContainer>
 
                     }
@@ -26,7 +26,7 @@ function Hero({ title, subtitle, orderOnlineLink, bookTable, desktopImage, mobil
                 </Content>
                 : null}
             <DesktopImageContainer>
-                <DesktopGatsbyImage layout="fill" src={desktopImage} alt={title ? title : "hero section"} />
+                <DesktopGatsbyImage priority={true} layout="fill" src={desktopImage} alt={title ? title : "hero section"} />
 
             </DesktopImageContainer>
             <MobileImageContainer>

@@ -3,17 +3,16 @@ import styled from 'styled-components'
 import SectionTitle from '../../UI/Titles/SectionTitle'
 import Form from './Form/Form'
 import ContactInfoContext from '../../../store/contact-info-context'
-function FormSection() {
-    const contactInfoCtx = useContext(ContactInfoContext)
-    // console.log(contactInfoCtx.contactData.acf.contact_form_name)
+function FormSection({formName, emailTo, note}) {
+  
     return (
         <Container id="book-table">
             <Content>
                 <SectionTitle color="var(--green) ">Book a Table</SectionTitle>
                 <Form
-                    formName={contactInfoCtx.contactData && contactInfoCtx.contactData.acf.booking_form_name}
-                    formNote={contactInfoCtx.contactData && contactInfoCtx.contactData.acf.booking_form_note}
-                    emailTo={contactInfoCtx.contactData && contactInfoCtx.contactData.acf.booking_form_email}></Form>
+                    formName={formName}
+                    formNote={note}
+                    emailTo={emailTo}></Form>
             </Content>
         </Container>
     )

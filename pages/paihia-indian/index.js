@@ -29,6 +29,7 @@ export default function Home(props) {
         testimonialData={props.testimonialData}
         chefData={props.chefData}
         galleryData={props.galleryData}
+        contactInfoData={props.contactInfoData}
       />
 
     </React.Fragment >
@@ -98,8 +99,6 @@ export async function getStaticProps(context) {
       galleryData: galleryData[0],
       seoData: seoData[0],
       contactInfoData: contactInfoData[0]
-
-
     },
     revalidate: 86400
   }

@@ -4,8 +4,8 @@ import Link from 'next/link'
 function Copyright({ copyright }) {
     return (
         <Container>
-            <Paragraph color="var(--fontGrey)"><Span>{copyright}</Span>
-                <Anchor href="https://webduel.co.nz" target="_blank">Built By Web<Duel>DUEL</Duel></Anchor></Paragraph>
+            <Paragraph color="var(--fontGrey)"><Span>{copyright}</Span></Paragraph>
+                <Anchor href="https://webduel.co.nz" target="_blank">Built By Web<Duel>DUEL</Duel></Anchor>
         </Container>
     )
 }

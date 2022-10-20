@@ -10,7 +10,8 @@ import ExtraInfo from './ExtraInfo/ExtraInfo'
 import FormSection from './FormSection/FormSection'
 import HomeGallery from './HomeGallery/HomeGallery'
 
-function Home({ sliderData, sloganData, favouriteMenuData, menuImagesData, uspData, bannerData, testimonialData, chefData, galleryData }) {
+function Home({ sliderData, sloganData, favouriteMenuData, menuImagesData, uspData, bannerData, testimonialData, chefData, galleryData, contactInfoData }) {
+    console.log(contactInfoData)
     return (
         <div>
             <HeroSection sliderData={sliderData} />
@@ -23,7 +24,11 @@ function Home({ sliderData, sloganData, favouriteMenuData, menuImagesData, uspDa
             <TestimonialSection testimonialData={testimonialData} />
             <ChefSection chefData={chefData} />
             <ExtraInfo />
-            <FormSection />
+            <FormSection 
+            formName={contactInfoData.acf.booking_form_name}
+            emailTo={contactInfoData.acf.email}
+            note={contactInfoData.acf.booking_form_note}
+            />
             <HomeGallery galleryData={galleryData} />
             {/* 
             

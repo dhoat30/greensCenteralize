@@ -25,7 +25,6 @@ function AnchorLink(props) {
 const Container = styled.a`
     display: inline-block;
     text-align: center;
-
     text-decoration: none; 
     letter-spacing: var(--letterSpacing);
     border: 2px solid var(--green);
@@ -36,7 +35,7 @@ const Container = styled.a`
     margin:${props => props.margin};
     text-transform: uppercase;
     cursor: pointer;
-    background: ${props => props.background ? "var(--green)" : "none"};
+    background: ${props=> props.background && "var(--green)"}; 
     color: ${props => props.background ? "white" : "var(--green)"};
 
     &:hover{

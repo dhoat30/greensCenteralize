@@ -4,7 +4,7 @@ import AnchorLinkIcon from '../AnchorLinkIcon/AnchorLinkIcon'
 function Copyright(props) {
     return (
         <Container className="row-container">
-            <AnchorLinkIcon icon="false" align="center" >
+            <AnchorLinkIcon link="/" icon="false" align="center" >
                 © {props.copyright}
 
             </AnchorLinkIcon>

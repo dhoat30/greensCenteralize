@@ -27,6 +27,7 @@ export default function Home(props) {
         testimonialData={props.testimonialData}
         chefData={props.chefData}
         galleryData={props.galleryData}
+        contactInfoData={props.contactInfoData}
       />
     </React.Fragment >
   )
