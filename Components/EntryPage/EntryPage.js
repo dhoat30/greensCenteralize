@@ -51,9 +51,9 @@ function EntryPage() {
                         <ButtonStyle onClick={clickHandler}>
                         <MapStyle/>                             Green&apos;s Paihia
                         </ButtonStyle>
-                        <AnchorStyle href="https://greensnz.com/russell">
+                        {/* <AnchorStyle href="https://greensnz.com/russell">
                         <MapStyle/>                             Green&apos;s Russell
-                        </AnchorStyle>
+                        </AnchorStyle> */}
                     </ButtonContainer>
                 }
 
