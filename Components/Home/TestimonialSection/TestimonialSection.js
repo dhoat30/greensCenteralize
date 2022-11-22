@@ -17,7 +17,7 @@ function TestimonialSection({ testimonialData }) {
     <Container>
       <TestimonialBox className="row-container">
         <SectionTitle fontFamily="var(--playfairDisplay)">
-          <QuoteIconStyle/> 
+          <QuoteIconStyle />
         </SectionTitle>
         <CarouselsStyle data={testimonialArray} />
       </TestimonialBox>
