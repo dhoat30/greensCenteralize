@@ -34,26 +34,26 @@ function EntryPage() {
                 {showBranches ?
                     <ButtonContainer>
                         <AnchorStyle href="https://greensnz.com/paihia-indian">
-                          <MapStyle/> 
+                            <MapStyle />
                             Green&apos;s Indian
                         </AnchorStyle>
                         <AnchorStyle href="https://greensnz.com/paihia-thai">
-                        <MapStyle/> 
+                            <MapStyle />
                             Green&apos;s Thai
                         </AnchorStyle>
                         <GoBack onClick={backClickHandler}>
-                            <ArrowIcon/> 
+                            <ArrowIcon />
                             Go Back
                         </GoBack>
                     </ButtonContainer>
                     :
                     <ButtonContainer>
                         <ButtonStyle onClick={clickHandler}>
-                        <MapStyle/>                             Green&apos;s Paihia
+                            <MapStyle />                             Green&apos;s Paihia
                         </ButtonStyle>
-                        {/* <AnchorStyle href="https://greensnz.com/russell">
-                        <MapStyle/>                             Green&apos;s Russell
-                        </AnchorStyle> */}
+                        <AnchorStyle href="https://greensnz.com/russell">
+                            <MapStyle />                             Green&apos;s Russell
+                        </AnchorStyle>
                     </ButtonContainer>
                 }
 
@@ -138,8 +138,9 @@ cursor: pointer;
 }
 
 `
-const MapStyle =styled(Map)`
+const MapStyle = styled(Map)`
 width: 30px; 
+margin-right: 5px;
 `
 
 const GoBack = styled.div`
