@@ -119,3 +119,10 @@
     flex-direction: column;
   }
 }
+
+label {
+  font-size: 70px !important;
+}
+h3 {
+  font-size: 5rem !important;
+}

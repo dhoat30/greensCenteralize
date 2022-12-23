@@ -2,14 +2,12 @@ import React, { useState, useContext, useEffect } from 'react'
 import styled from 'styled-components'
 
 import ContactInfoContext from '../../store/contact-info-context'
-import { useRouter } from 'next/router'
 import Map from '../UI/Icons/Map'
 import ArrowIcon from '../UI/Icons/ArrowIcon'
 
 function EntryPage() {
     const [showBranches, setShowBranches] = useState(false)
     const contactInfoCtx = useContext(ContactInfoContext)
-    const router = useRouter()
 
     useEffect(() => {
         contactInfoCtx.getShowHeaderFooter(false)
@@ -23,7 +21,7 @@ function EntryPage() {
         setShowBranches(false)
     }
     return (
-        <Container className="row-container">
+        <Container className="row-container entry-page">
             <BackgroundImage style={{ backgroundImage: `url(/greens-background.jpeg)` }} />
             <ContentContainer>
                 <Title> Welcome To</Title>
@@ -65,6 +63,7 @@ function EntryPage() {
 }
 const Container = styled.section`
 padding: 0 0;
+
 `
 const BackgroundImage = styled.div`
 background-size: cover;

@@ -10,7 +10,7 @@ import { useRouter } from 'next/router'
 // menu array
 
 
-function Header({contactData}) {
+function Header({ contactData }) {
   const router = useRouter()
   let url
   if (contactData.slug === 'greens-thai-paihia') {
@@ -78,7 +78,7 @@ function Header({contactData}) {
     }
   })
   return (
-    <Container>
+    <Container className='header'>
       <DesktopNavbar className="row-container">
         <Navbar firstMenuArray={firstPartMenu} />
         <Link href={menuArray[0].url} passHref>
@@ -88,7 +88,7 @@ function Header({contactData}) {
       </DesktopNavbar>
 
       <MobileNavbar className="row-container">
-       
+
         <Navbar firstMenuArray={mobileMenuArrayData} />
         <Link href={menuArray[0].url} passHref>
           <LinkStyle><Logo logoData={contactData.acf.logo} header={true} contWidth="100px" /></LinkStyle>

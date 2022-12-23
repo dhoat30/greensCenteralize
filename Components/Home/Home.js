@@ -24,10 +24,11 @@ function Home({ sliderData, sloganData, favouriteMenuData, menuImagesData, uspDa
             <TestimonialSection testimonialData={testimonialData} />
             <ChefSection chefData={chefData} />
             <ExtraInfo />
-            <FormSection 
-            formName={contactInfoData.acf.booking_form_name}
-            emailTo={contactInfoData.acf.email}
-            note={contactInfoData.acf.booking_form_note}
+            <FormSection
+                iframe={contactInfoData.acf.resdiary_iframe}
+                formName={contactInfoData.acf.booking_form_name}
+                emailTo={contactInfoData.acf.email}
+                note={contactInfoData.acf.booking_form_note}
             />
             <HomeGallery galleryData={galleryData} />
             {/* 
