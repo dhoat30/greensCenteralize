@@ -16,8 +16,7 @@ function FormSection({ formName, emailTo, note, children, iframe }) {
                     formName={formName}
                     formNote={note}
                     emailTo={emailTo}></Form> */}
-                <center><iframe src="https://booking.resdiary.com/widget/Standard/GREENSINDIANCUISINE/8000?"
-                    allowtransparency="true" frameBorder="0"></iframe></center>
+                <div dangerouslySetInnerHTML={{ __html: iframe }} />
             </Content>
         </Container>
     )

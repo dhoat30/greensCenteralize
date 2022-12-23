@@ -6,7 +6,6 @@ import getContactInfo from '../../util/get-contact-info'
 
 export default function Home(props) {
 
-
   const seo = {
     title: "Greens Indian Restaurant – Paihia | Delivery | Byo | Gluten Free Options",
     description: "Whether here for lunch, dinner or a private function, enjoy an atmosphere that combines the Indo-Thai warmth with the friendliness Paihia is famed for.",
@@ -84,7 +83,7 @@ export async function getStaticProps(context) {
   let seoData = await seoResponse.json()
   seoData = await seoData.filter(item => item.title.rendered.includes('Russell'))
 
-  const contactInfoData = await getContactInfo("greens-indian-pahia") 
+  const contactInfoData = await getContactInfo("greens-indian-pahia")
 
   return {
     props: {
