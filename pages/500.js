@@ -36,3 +36,16 @@ function termsConditions() {
 }
 
 export default termsConditions
+export async function getStaticProps(context) {
+  // get home page data using category from hero images 
+  const contactInfoData = await getContactInfo("greens-russell")
+
+  return {
+    props: {
+
+      contactInfoData: contactInfoData[0]
+
+    },
+    revalidate: 86400
+  }
+}
